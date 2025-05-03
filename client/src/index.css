@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Base colors from design */
+  --background: 0 0% 100%;
+  --foreground: 222 47% 11%;
+  --muted: 60 4.8% 95.9%;
+  --muted-foreground: 25 5.3% 44.7%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 47% 11%;
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  
+  /* Brand colors - Updated to match accent */
+  --primary-start: 191 100% 42%;
+  --primary-end: 191 100% 42%;
+  --secondary-start: 191 100% 42%;
+  --secondary-end: 191 100% 42%;
+  --accent: 191 100% 42%;
+  
+  /* Other UI colors */
+  --primary: 191 100% 42%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 191 100% 42%;
+  --secondary-foreground: 0 0% 100%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 222 47% 11%;
+  
+  /* Light mode specific */
+  --light-bg: 0 0% 100%;
+  --light-card: 210 40% 98%;
+  --light-text: 222 47% 11%;
+  
+  /* Radius */
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: 225 6% 10%;
+  --foreground: 0 0% 95%;
+  --muted: 223 6% 19%;
+  --muted-foreground: 215 7% 65%;
+  --popover: 225 6% 10%;
+  --popover-foreground: 0 0% 95%;
+  --card: 225 6% 15%;
+  --card-foreground: 0 0% 95%;
+  --border: 223 6% 25%;
+  --input: 223 6% 25%;
+  
+  /* Brand colors stay the same in dark mode */
+  --primary-start: 191 100% 42%;
+  --primary-end: 191 100% 42%;
+  --secondary-start: 191 100% 42%;
+  --secondary-end: 191 100% 42%;
+  --accent: 191 100% 42%;
+  
+  /* Other UI colors */
+  --primary: 191 100% 42%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 191 100% 42%;
+  --secondary-foreground: 0 0% 100%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 215 25% 65%;
+  
+  /* Dark mode specific */
+  --dark-bg: 225 6% 10%;
+  --dark-card: 225 6% 15%;
+  --dark-text: 0 0% 95%;
+}
+
+/* Defining colors for utility classes */
+@layer base {
+  :root {
+    --primary-start: #00B4D8;
+    --primary-end: #00B4D8;
+    --secondary-start: #00B4D8;
+    --secondary-end: #00B4D8;
+    --accent: #00B4D8;
+  }
+  
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  /* Glass morphism effect */
+  .glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/20 dark:bg-neutral-900/80 dark:border-neutral-700/30;
+  }
+  
+  /* Gradient Text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-start to-primary-end bg-clip-text text-transparent;
+  }
+  
+  .gradient-text-secondary {
+    @apply bg-gradient-to-r from-secondary-start to-secondary-end bg-clip-text text-transparent;
+  }
+  
+  /* Gradient Backgrounds */
+  .gradient-bg {
+    @apply bg-gradient-to-r from-primary-start to-primary-end;
+  }
+  
+  .gradient-bg-secondary {
+    @apply bg-gradient-to-r from-secondary-start to-secondary-end;
+  }
+}
